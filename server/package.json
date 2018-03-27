@@ -17,6 +17,7 @@
     "mongoose": "^4.11.1",
     "nodemon": "^1.11.0",
     "path-parser": "^2.0.2",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "valid-url": "^1.0.9"
   }
 }

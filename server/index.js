@@ -3,27 +3,28 @@ const mongoose = require("mongoose");
 //Simple cookie-based session middleware
 const cookieSession = require("cookie-session");
 const bodyParser = require("body-parser");
-const keys = require("./config/constants");
+const constants = require("./config/constants");
 
 //Connect to MongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI, {
+mongoose.set("debug", true);
+mongoose.connect(constants.mongoURI, {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE,
   useMongoClient: true
 });
 
-require("./models/Product");
+require("./models/UrlShorten");
 const app = express();
 
 app.use(bodyParser.json());
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys: [keys.cookieKey]
+    keys: [constants.cookieKey]
   })
 );
-require("./routes/product")(app);
+require("./routes/urlshorten")(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
