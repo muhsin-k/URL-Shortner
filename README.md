@@ -1,10 +1,11 @@
 # URL-Shortner
-Create your own URL shortener in MongoDB
 
+Create your own URL shortener in MongoDB
 
 ## ☑ TODO
 
-* [x] Add Redis
+* [ ] Add Redis
+* [ ] Change Url code algorithm [https://github.com/dylang/shortid]
 
 ## License
 
