@@ -2,14 +2,6 @@
   "name": "todo-frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/auth/*": {
-      "target": "http://localhost:5000"
-    },
-    "/api/*": {
-      "target": "http://localhost:5000"
-    }
-  },
   "dependencies": {
     "axios": "^0.16.2",
     "materialize-css": "^0.100.2",
