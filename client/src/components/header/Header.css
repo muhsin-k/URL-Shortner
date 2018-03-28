@@ -2,5 +2,6 @@ nav {
   color: black;
 }
 .nav-wrapper {
-  background-color: #26a69a !important;
+  background-color: white !important;
+  color: black !important;
 }

@@ -4,15 +4,12 @@ import "./Header.css";
 class Header extends Component {
   render() {
     return (
-      <nav
-        className="z-depth-0"
-        style={{ backgroundColor: "transparent !important" }}
-      >
+      <nav className="z-depth-0">
         <div className="nav-wrapper">
           <Link
             to="/"
             className="left brand-logo"
-            style={{ marginLeft: "10px" }}
+            style={{ left: "0px", color: "black" }}
           >
             Custom URL Shortener
           </Link>

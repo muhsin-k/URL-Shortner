@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Form, Text } from "react-form";
 import "./Landing.css";
 class Landing extends Component {
   constructor() {
