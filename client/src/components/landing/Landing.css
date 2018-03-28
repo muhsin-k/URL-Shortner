@@ -7,3 +7,6 @@
 .shorten-title {
   margin-top: 20px;
 }
+.formError {
+  color: red;
+}
