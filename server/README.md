@@ -3,6 +3,7 @@ Custom URL Shortner
 * [Express](https://expressjs.com/)
 * [Mongoose](http://mongoosejs.com/)
 * [Redis](https://redis.io/)
+* [ShortId](https://github.com/dylang/shortid)
 
 ## Getting Started
 

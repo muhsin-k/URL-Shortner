@@ -1,7 +1,8 @@
 
 node_modules/
 build/
-
+bash_client.sh
+bash_server.sh
 # misc
 .DS_Store/
 .DS_Store
