@@ -10,3 +10,11 @@
 .formError {
   color: red;
 }
+.loader {
+  margin-top: 20px;
+  text-align: center;
+  padding: 0 14px;
+}
+.shorten-imp {
+  margin-top: 20px;
+}

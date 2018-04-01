@@ -6,8 +6,6 @@ axios.interceptors.response.use(
     return response;
   },
   error => {
-    console.log("API err", error);
-
     return Promise.reject(error);
   }
 );

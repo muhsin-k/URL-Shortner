@@ -10,7 +10,11 @@ class Landing extends Component {
       originalUrl: "",
       baseUrl: "",
       clickSubmit: true,
-      showError: false
+      showError: false,
+      showLoading: false,
+      exUrl:
+        "https://www.amazon.com/Apple-iPhone-GSM-Unlocked-5-8/dp/B075QMZH2L",
+      exShortUrl: "http://muhzi.com"
     };
     this.handleUserInput = this.handleUserInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,19 +27,55 @@ class Landing extends Component {
   handleSubmit() {
     this.setState({ clickSubmit: true });
     if (this.state.clickSubmit && this.state.originalUrl) {
+      this.setState({ showLoading: true, showShortenUrl: false });
       let reqObj = {
         originalUrl: this.state.originalUrl,
         shortBaseUrl: "http://muhzi.com"
       };
       createShortUrl(reqObj)
         .then(json => {
-          this.setState({ showShortenUrl: true });
-          this.setState({ shortenUrl: json.data.shortUrl });
-          console.log("Json", json);
+          setTimeout(() => {
+            this.setState({
+              showLoading: false,
+              showShortenUrl: true,
+              shortenUrl: json.data.shortUrl
+            });
+          }, 1000);
         })
         .catch(error => console.log("Json", error));
     } else {
       this.setState({ showError: true });
+    }
+  }
+  renderButton() {
+    if (!this.state.showLoading) {
+      return (
+        <button
+          className="btn waves-effect waves-light submit-btn"
+          name="action"
+          onClick={this.handleSubmit}
+        >
+          Submit
+        </button>
+      );
+    } else {
+      return (
+        <div className="loader">
+          <div className="preloader-wrapper small active">
+            <div className="spinner-layer spinner-green-only">
+              <div className="circle-clipper left">
+                <div className="circle" />
+              </div>
+              <div className="gap-patch">
+                <div className="circle" />
+              </div>
+              <div className="circle-clipper right">
+                <div className="circle" />
+              </div>
+            </div>
+          </div>
+        </div>
+      );
     }
   }
   render() {
@@ -45,7 +85,10 @@ class Landing extends Component {
           <h5> Original Url</h5>
         </div>
         <div>
-          Ex:https://www.amazon.com/Apple-iPhone-GSM-Unlocked-5-8/dp/B075QMZH2L
+          Ex:{" "}
+          <a target="_blank" href={this.state.exUrl}>
+            {this.state.exUrl}
+          </a>
         </div>
         <input
           name="originalUrl"
@@ -60,25 +103,18 @@ class Landing extends Component {
         )}
 
         <div>
-          <h5> Base Url [Optional]</h5>
+          <h5>*Base Url</h5>
         </div>
-        {/* <div>Ex: https://www.amazon.com</div> */}
 
         <input
           field="baseUrl"
           name="baseUrl"
-          placeholder="http://muhzi.com/"
+          placeholder="http://muhzi.com"
           value={this.state.baseUrl}
           onChange={this.handleUserInput.bind(this)}
           disabled
         />
-        <button
-          className="btn waves-effect waves-light submit-btn"
-          name="action"
-          onClick={this.handleSubmit}
-        >
-          Submit
-        </button>
+        {this.renderButton()}
         {this.state.showShortenUrl && (
           <div className="shorten-title">
             <h5>Shortened Url is </h5>
@@ -87,7 +123,12 @@ class Landing extends Component {
             </a>
           </div>
         )}
-        <div>*Here base url is deafult</div>
+        <div className="shorten-imp">
+          [* Here base url hase the default value{" "}
+          <a target="_blank" href={this.state.exShortUrl}>
+            {this.state.exShortUrl}
+          </a>,you can change it later]
+        </div>
       </div>
     );
   }
