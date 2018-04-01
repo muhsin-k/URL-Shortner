@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./Landing.css";
+import { createShortUrl } from "../../APIHelper";
 class Landing extends Component {
   constructor() {
     super();
     this.state = {
       showShortenUrl: false,
-      shortenUrl: " https://www.amazon.com/AFDcs",
+      shortenUrl: "",
       originalUrl: "",
       baseUrl: "",
       clickSubmit: true,
@@ -22,7 +23,17 @@ class Landing extends Component {
   handleSubmit() {
     this.setState({ clickSubmit: true });
     if (this.state.clickSubmit && this.state.originalUrl) {
-      this.setState({ showShortenUrl: true });
+      let reqObj = {
+        originalUrl: this.state.originalUrl,
+        shortBaseUrl: "http://muhzi.com"
+      };
+      createShortUrl(reqObj)
+        .then(json => {
+          this.setState({ showShortenUrl: true });
+          this.setState({ shortenUrl: json.data.shortUrl });
+          console.log("Json", json);
+        })
+        .catch(error => console.log("Json", error));
     } else {
       this.setState({ showError: true });
     }
@@ -51,14 +62,15 @@ class Landing extends Component {
         <div>
           <h5> Base Url [Optional]</h5>
         </div>
-        <div>Ex: https://www.amazon.com</div>
+        {/* <div>Ex: https://www.amazon.com</div> */}
 
         <input
           field="baseUrl"
           name="baseUrl"
-          placeholder="Paste your domain"
+          placeholder="http://muhzi.com/"
           value={this.state.baseUrl}
           onChange={this.handleUserInput.bind(this)}
+          disabled
         />
         <button
           className="btn waves-effect waves-light submit-btn"
@@ -75,6 +87,7 @@ class Landing extends Component {
             </a>
           </div>
         )}
+        <div>*Here base url is deafult</div>
       </div>
     );
   }
