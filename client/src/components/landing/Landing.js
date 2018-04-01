@@ -129,7 +129,7 @@ class Landing extends Component {
         )}
         {this.state.showShortenUrl && (
           <div className="shorten-title">
-            <h5>Shortened Url is </h5>
+            Shortened Url is -
             <a target="_blank" href={this.state.shortenUrl}>
               {this.state.shortenUrl}
             </a>
