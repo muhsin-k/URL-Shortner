@@ -11,6 +11,8 @@ class Landing extends Component {
       baseUrl: "",
       clickSubmit: true,
       showError: false,
+      apiError: "",
+      showApiError: false,
       showLoading: false,
       exUrl:
         "https://www.amazon.com/Apple-iPhone-GSM-Unlocked-5-8/dp/B075QMZH2L",
@@ -25,7 +27,7 @@ class Landing extends Component {
     this.setState({ [name]: value });
   }
   handleSubmit() {
-    this.setState({ clickSubmit: true });
+    this.setState({ clickSubmit: true, showApiError: false });
     if (this.state.clickSubmit && this.state.originalUrl) {
       this.setState({ showLoading: true, showShortenUrl: false });
       let reqObj = {
@@ -40,9 +42,16 @@ class Landing extends Component {
               showShortenUrl: true,
               shortenUrl: json.data.shortUrl
             });
-          }, 1000);
+          }, 0);
         })
-        .catch(error => console.log("Json", error));
+        .catch(error => {
+          this.setState({
+            showLoading: false,
+            showApiError: true,
+            apiError:
+              "Wrong  Original Url format, make sure you entered a valid url"
+          });
+        });
     } else {
       this.setState({ showError: true });
     }
@@ -115,6 +124,9 @@ class Landing extends Component {
           disabled
         />
         {this.renderButton()}
+        {this.state.showApiError && (
+          <div className="shorten-error">{this.state.apiError}</div>
+        )}
         {this.state.showShortenUrl && (
           <div className="shorten-title">
             <h5>Shortened Url is </h5>

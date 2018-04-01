@@ -47,7 +47,7 @@ module.exports = app => {
       }
     } else {
       return res
-        .status(404)
+        .status(401)
         .json(
           "Wrong  Original Url format, make sure you have a valid protocol and real site."
         );

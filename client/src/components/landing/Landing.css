@@ -18,3 +18,8 @@
 .shorten-imp {
   margin-top: 20px;
 }
+
+.shorten-error {
+  margin-top: 20px;
+  color: red;
+}
