@@ -2,7 +2,7 @@
   URL-Shortner
 </h1>
 
-<h4 align="center">Create your own URL shortener With Nodejs</h4>
+<h4 align="center">Creating custom URL shortener With Nodejs</h4>
 <div align="center">
   <sub>Built with ❤︎ </sub>
 </div>
