@@ -13,10 +13,6 @@
 
 ## Technologies
 
-* [Express](https://expressjs.com/)
-* [Mongodb](https://expressjs.com/)
-* [Mongoose](http://mongoosejs.com/)
-
 - ### Back end
     - [Express](https://expressjs.com/)
     - [Mongoose](http://mongoosejs.com/)
