@@ -14,13 +14,14 @@
 ## Technologies
 
 - ### Back end
-    - [Express](https://expressjs.com/)
-    - [Mongoose](http://mongoosejs.com/)
-    - [Redis](https://redis.io/)
+    - [Express](https://expressjs.com/)- Nodejs framwork for building the REST Apis
+    - [Mongodb](http://mongodb.com/)-  Document oriented NoSQL database
+    - [Mongoose](https://http://mongoosejs.com)- MongoDB object modeling tool
+    - [Nginx](https://www.nginx.com/-Nginx is event-based and asynchronous web server.)
+
 - ### Front end
-    - [React 16](https://reactjs.org/)
-    - [Redux](https://redux.js.org/)
-    - [Axios](https://github.com/axios/axios)
+    - [React](https://reactjs.org/) - JavaScript library for building user interfaces.
+    - [Redux](https://redux.js.org/)- Predictable state container for JavaScript applications
 
 
 ## Getting Started
