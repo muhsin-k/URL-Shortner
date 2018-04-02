@@ -61,10 +61,9 @@ yarn run start
 
 ## ☑ TODO
 
-* [ ] Front end app
+* [X] Front end app
 * [ ] Documentation and Blog
 * [ ] Add Redis for caching
-* [ ] Change Url code algorithm [https://github.com/dylang/shortid]
 
 ## License
 
