@@ -58,7 +58,7 @@ yarn run start
 
 Check out the demo project for a quick example of how NSGIF works. After you capture your video, this is what you have to do, to retrieve the GIF:
 
-![NSGIF](https://dl.dropboxusercontent.com/s/p02c6l7rzk6mf6m/NSGIF-HT.gif?dl=0)
+![NSGIF](https://media.giphy.com/media/nybBKclzeatj6RF4HV/giphy.gif)
 
 ## ☑ TODO
 
