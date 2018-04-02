@@ -1,3 +1,3 @@
 module.exports = {
-  baseUrl: "http://muhzi.com:7000/api/"
+  baseUrl: "http://localhost:7000/api/"
 };
