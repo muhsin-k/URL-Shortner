@@ -17,7 +17,7 @@
     - [Express](https://expressjs.com/)- Nodejs framwork for building the REST Apis
     - [Mongodb](http://mongodb.com/)-  Document oriented NoSQL database
     - [Mongoose](https://http://mongoosejs.com)- MongoDB object modeling tool
-    - [Nginx](https://www.nginx.com/-Nginx is event-based and asynchronous web server.)
+    - [Nginx](https://www.nginx.com)- Nginx is event-based and asynchronous web server.)
 
 - ### Front end
     - [React](https://reactjs.org/) - JavaScript library for building user interfaces.
@@ -28,17 +28,27 @@
 
 ```sh
 # clone it
-git clone https://github.com/muhzi4u/express-starter.git
-cd express-starter
+git clone https://github.com/muhzi4u/URL-Shortner.git
+cd URL-Shortner
 
 # Make it your own
 rm -rf .git && git init && npm init
 
+# Move to server folder
+cd server/
 # Install dependencies
 yarn install
 
 # Start  server
 yarn run server
+# Move to client folder 
+cd client/
+# Install dependencies
+
+yarn install
+
+# Start  cleint
+yarn run start
 ```
 
 ## Demo
