@@ -20,6 +20,8 @@ Building a custom URL shortening service like goo.gl using ExpressJs and Mongodb
     - [Express](https://expressjs.com/)- Nodejs framwork for building the REST Apis
     - [Mongodb](http://mongodb.com/)-  Document oriented NoSQL database
     - [Mongoose](https://http://mongoosejs.com)- MongoDB object modeling tool
+    - [Short-id](https://github.com/dylang/shortid)- Short id generator
+    - [Valid-url](https://github.com/ogt/valid-url)- URI validation functions   
     - [Nginx](https://www.nginx.com)- Nginx is event-based and asynchronous web server.
 
 - ### Front end
