@@ -1,6 +1,7 @@
 
 node_modules/
 build/
+instructions.md
 client/instructions.md
 bash_client.sh
 .DS_Store
