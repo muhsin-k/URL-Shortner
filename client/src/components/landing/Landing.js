@@ -140,7 +140,8 @@ class Landing extends Component {
           [* Here base url has the default value{" "}
           <a target="_blank" href={this.state.exShortUrl}>
             {this.state.exShortUrl}
-          </a>]
+          </a>{" "}
+          .This will change based on domain name]
         </div>
       </div>
     );
