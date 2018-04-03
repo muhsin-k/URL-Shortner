@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Landing.css";
 import { createShortUrl } from "../../APIHelper";
+import constants from "../../config/constants";
 class Landing extends Component {
   constructor() {
     super();
@@ -16,7 +17,7 @@ class Landing extends Component {
       showLoading: false,
       exUrl:
         "https://www.amazon.com/Apple-iPhone-GSM-Unlocked-5-8/dp/B075QMZH2L",
-      exShortUrl: "http://muhzi.com"
+      exShortUrl: constants.baseUrl
     };
     this.handleUserInput = this.handleUserInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,7 +33,7 @@ class Landing extends Component {
       this.setState({ showLoading: true, showShortenUrl: false });
       let reqObj = {
         originalUrl: this.state.originalUrl,
-        shortBaseUrl: "http://muhzi.com"
+        shortBaseUrl: constants.baseUrl
       };
       createShortUrl(reqObj)
         .then(json => {
@@ -118,7 +119,7 @@ class Landing extends Component {
         <input
           field="baseUrl"
           name="baseUrl"
-          placeholder="http://muhzi.com"
+          placeholder={this.state.exShortUrl}
           value={this.state.baseUrl}
           onChange={this.handleUserInput.bind(this)}
           disabled
