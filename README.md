@@ -7,7 +7,7 @@
   <sub>Built with ❤︎ </sub>
 </div>
 
-<br>
+</br>
 Building a custom URL shortening service like goo.gl using ExpressJs and Mongodb
 
 ## Architecture
@@ -24,9 +24,9 @@ Building a custom URL shortening service like goo.gl using ExpressJs and Mongodb
 
 - ### Front end
     - [React](https://reactjs.org/) - JavaScript library for building user interfaces.
-    - [Redux](https://redux.js.org/)- Predictable state container for JavaScript applications
-
-
+    - [React-router](https://github.com/ReactTraining/react-router)- Complete routing library for React
+    - [Materialize css](http://materializecss.com/)- Responsive front-end framework based on Material Design
+  
 ## Getting Started
 #### Clone the project
 ```sh
