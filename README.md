@@ -6,7 +6,9 @@
 <div align="center">
   <sub>Built with ❤︎ </sub>
 </div>
-  
+
+Building a custom URL shortening service like goo.gl using ExpressJs and Mongodb
+
 ## Architecture
 
 <img src="sketch/architecture.png" alt="architecture" />
@@ -64,6 +66,7 @@ yarn run start
 * [X] Front end app
 * [ ] Documentation and Blog
 * [ ] Add Redis for caching
+* [ ] Change short code algoritham and check duplicate short codes
 
 ## License
 
