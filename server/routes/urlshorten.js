@@ -15,14 +15,10 @@ module.exports = app => {
   });
 
   app.post("/api/item", async (req, res) => {
-    const { originalUrl, shortBaseUrl } = req.body;
+    const locationDetails = findIpDetails.find(req);
     if (validUrl.isUri(shortBaseUrl)) {
     } else {
-      return res
-        .status(404)
-        .json(
-          "Wrong  Base Url format, make sure you have a valid protocol and real site."
-        );
+      return res.status(404).json("Invalid Base Url format");
     }
     const urlCode = shortCode.generate();
     const updatedAt = new Date();
@@ -40,17 +36,18 @@ module.exports = app => {
             updatedAt
           });
           await item.save();
-          res.status(200).json(item);
+          res.status(200).json({
+            originalUrl,
+            shortUrl,
+            urlCode,
+            updatedAt
+          });
         }
       } catch (err) {
         res.status(401).json("Invalid User Id");
       }
     } else {
-      return res
-        .status(401)
-        .json(
-          "Wrong  Original Url format, make sure you have a valid protocol and real site."
-        );
+      return res.status(401).json("Invalid Original Url.");
     }
   });
 };

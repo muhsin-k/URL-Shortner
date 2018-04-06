@@ -49,8 +49,7 @@ class Landing extends Component {
           this.setState({
             showLoading: false,
             showApiError: true,
-            apiError:
-              "Wrong  Original Url format, make sure you entered a valid url"
+            apiError: "Server Error"
           });
         });
     } else {
