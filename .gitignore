@@ -4,6 +4,7 @@ build/
 instructions.md
 client/instructions.md
 bash_client.sh
+server/middlewares/service.js
 .DS_Store
 bash_server.sh
 # misc
