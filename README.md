@@ -63,6 +63,10 @@ yarn run start
 
 ![NSGIF](https://j.gifs.com/1rnQV0.gif)
 
+## Blog
+
+[Creating custom URL shortener with Nodejs](https://codeburst.io/creating-custom-url-shortener-with-nodejs-de10bbbb89c7)
+
 
 ## ☑ TODO
 
