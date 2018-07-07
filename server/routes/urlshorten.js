@@ -16,6 +16,7 @@ module.exports = app => {
 
   app.post("/api/item", async (req, res) => {
     const locationDetails = findIpDetails.find(req);
+    const { shortBaseUrl, originalUrl } = req.body;
     if (validUrl.isUri(shortBaseUrl)) {
     } else {
       return res.status(404).json("Invalid Base Url format");
