@@ -22,7 +22,7 @@ module.exports = app => {
     } else {
       return res.status(404).json('Invalid Base Url format');
     }
-    const urlCode = shortCode.generate();
+
     const updatedAt = new Date();
     const queryOptions = { originalUrl };
     if (validUrl.isUri(originalUrl)) {
@@ -38,6 +38,7 @@ module.exports = app => {
         if (urlData) {
           res.status(200).json(urlData);
         } else {
+          const urlCode = shortCode.generate();
           shortUrl = shortBaseUrl + '/' + urlCode;
           const itemToBeSaved = { originalUrl, shortUrl, urlCode, updatedAt };
 
