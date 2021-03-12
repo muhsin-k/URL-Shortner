@@ -32,7 +32,7 @@ app.use(function(req, res, next) {
 require('./routes/urlshorten')(app);
 
 require('./services/cache');
-const PORT = 7000;
+const PORT = 6500;
 app.listen(PORT, () => {
   console.log(`Server started on port`, PORT);
 });
